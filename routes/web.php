@@ -15,8 +15,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::prefix('user')->namespace('User')->name('user.')->middleware(['web', 'auth', 'isUser'])->group(base_path('routes/web/user/user.php'));
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
