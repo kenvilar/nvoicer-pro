@@ -25,7 +25,7 @@
         <main class="py-4">
             <div class="container-fluid">
                 <!--Breadcrumbs-->
-                <nav aria-label="breadcrumb">
+                <nav aria-label="breadcrumb row">
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         @yield('breadcrumbs')
