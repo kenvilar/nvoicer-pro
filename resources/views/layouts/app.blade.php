@@ -27,7 +27,7 @@
                 <!--Breadcrumbs-->
                 <nav aria-label="breadcrumb row">
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="{{ route('home') }}">Home</a></li>
                         @yield('breadcrumbs')
                     </ol>
                 </nav>

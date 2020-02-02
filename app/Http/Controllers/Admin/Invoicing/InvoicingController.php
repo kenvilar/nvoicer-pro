@@ -9,6 +9,6 @@ class InvoicingController extends Controller
 {
     public function index()
     {
-        return 'invoicing';
+        return view('admin.invoicing.index');
     }
 }
