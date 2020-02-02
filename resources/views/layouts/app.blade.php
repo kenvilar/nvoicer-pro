@@ -23,7 +23,16 @@
     <div id="app">
         @include('common.navbar-top')
         <main class="py-4">
-            @yield('content')
+            <div class="container-fluid">
+                <!--Breadcrumbs-->
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        @yield('breadcrumbs')
+                    </ol>
+                </nav>
+                @yield('content')
+            </div>
         </main>
     </div>
 </body>
