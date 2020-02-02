@@ -10,7 +10,7 @@
         <a class="dropdown-item" href="#">Recent Invoices</a>
         <a class="dropdown-item" href="#">Overdue Invoices</a>
         <div class="dropdown-divider"></div>
-        <a class="dropdown-item" href="{{ route('admin.invoicing.settings') }}">Settings</a>
+        <a class="dropdown-item" href="{{ route('admin.invoicing.settings.dashboard') }}">Settings</a>
     </div>
 </li>
 <li class="nav-item dropdown">
