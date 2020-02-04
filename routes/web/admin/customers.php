@@ -9,4 +9,6 @@
 
 Route::get('/', 'CustomersController@index')->name('dashboard');
 Route::get('/create', 'CustomersController@create')->name('create');
+Route::get('/show/{customer}', 'CustomersController@show')->name('show');
+Route::get('/edit/{customer}', 'CustomersController@edit')->name('edit');
 Route::post('/store', 'CustomersController@store')->name('store');
