@@ -56,18 +56,18 @@ class CustomersController extends Controller
      */
     public function show(Customer $customer)
     {
-        return view('admin.customers.show');
+        return view('admin.customers.show', compact('customer'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Customer $customer
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function edit($id)
+    public function edit(Customer $customer)
     {
-        //
+        return view('admin.customers.edit', compact('customer'));
     }
 
     /**
