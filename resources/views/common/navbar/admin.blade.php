@@ -3,7 +3,7 @@
         Customers  <span class="caret"></span>
     </a>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#">Dashboard</a>
+        <a class="dropdown-item" href="{{ route('admin.customers.dashboard') }}">Dashboard</a>
         <a class="dropdown-item" href="{{ route('admin.customers.create') }}">Create Customer</a>
     </div>
 </li>
