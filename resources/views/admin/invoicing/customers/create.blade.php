@@ -23,77 +23,77 @@
                     <div class="form-group row">
                         <label for="" class="col-md-3">Customer Name</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="name">
+                            <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="" class="col-md-3">Address 1</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="address_1">
+                            <input type="text" class="form-control" name="address_1" value="{{ old('address_1') }}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="" class="col-md-3">Address 2</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="address_2">
+                            <input type="text" class="form-control" name="address_2" value="{{ old('address_2') }}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="" class="col-md-3">City</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="city">
+                            <input type="text" class="form-control" name="city" value="{{ old('city') }}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="" class="col-md-3">Province</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="province">
+                            <input type="text" class="form-control" name="province" value="{{ old('province') }}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="" class="col-md-3">Country</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="country">
+                            <input type="text" class="form-control" name="country" value="{{ old('country') }}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="" class="col-md-3">Email</label>
                         <div class="col-md-9">
-                            <input type="email" class="form-control" name="email">
+                            <input type="email" class="form-control" name="email" value="{{ old('email') }}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="" class="col-md-3">Phone 1</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="phone_1">
+                            <input type="text" class="form-control" name="phone_1" value="{{ old('phone_1') }}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="" class="col-md-3">Phone 2</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="phone_2">
+                            <input type="text" class="form-control" name="phone_2" value="{{ old('phone_2') }}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="" class="col-md-3">Fax</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="fax">
+                            <input type="text" class="form-control" name="fax" value="{{ old('fax') }}">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="" class="col-md-3">Contact Person</label>
                         <div class="col-md-9">
-                            <input type="text" class="form-control" name="contact_person">
+                            <input type="text" class="form-control" name="contact_person" value="{{ old('contact_person') }}">
                         </div>
                     </div>
 
