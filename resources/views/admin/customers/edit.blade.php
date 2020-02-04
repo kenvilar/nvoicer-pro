@@ -12,7 +12,9 @@
             <div class="card-body">
                 <div class="row">
                     <div class="col-10">
-                        <h3>Edit Customer <small class="text-muted">{{ $customer->name  }}</small></h3>
+                        <h3>Edit Customer <small
+                                class="text-muted">{{ $customer->name  }} {{ env('APP_ENV') == 'local' ? '(ID: ' . $customer->id . ')' : '' }}</small>
+                        </h3>
                     </div>
                     <div class="col-2">
                         <ul class="navbar-nav float-right">
@@ -39,7 +41,7 @@
                         <label for="" class="col-md-3">Customer Name</label>
                         <div class="col-md-9">
                             <input type="text" class="form-control" name="name"
-                                   value="{{ old('name') ? old('name') : $customer->name }}">
+                                   value="{{ old('name', $customer->name) }}">
                         </div>
                     </div>
 
@@ -47,7 +49,7 @@
                         <label for="" class="col-md-3">Address 1</label>
                         <div class="col-md-9">
                             <input type="text" class="form-control" name="address_1"
-                                   value="{{ old('address_1') ? old('address_1') : $customer->address_1 }}">
+                                   value="{{ old('address_1', $customer->address_1) }}">
                         </div>
                     </div>
 
