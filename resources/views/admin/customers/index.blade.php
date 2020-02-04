@@ -45,7 +45,8 @@
                             <td>{{$customer->name}}</td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="{{ route('') }}" class="btn btn-primary">View</a>
+                                    <a href="{{ route('admin.customers.show', $customer->id) }}"
+                                       class="btn btn-primary">View</a>
                                     <a href="#" class="btn btn-warning">Edit</a>
                                 </div>
                             </td>
