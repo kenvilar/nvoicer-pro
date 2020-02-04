@@ -45,7 +45,7 @@
                             <td>{{$customer->name}}</td>
                             <td>
                                 <div class="btn-group">
-                                    <a href="#" class="btn btn-primary">View</a>
+                                    <a href="{{ route('') }}" class="btn btn-primary">View</a>
                                     <a href="#" class="btn btn-warning">Edit</a>
                                 </div>
                             </td>
