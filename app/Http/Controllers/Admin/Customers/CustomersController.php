@@ -100,6 +100,6 @@ class CustomersController extends Controller
     {
         $customer->delete();
 
-        return redirect()->route('admin.customers.dashboard')->with('success', 'You have successfully deleted the customer!');
+        return redirect()->route('admin.customers.dashboard')->with('warning', 'You have successfully deleted the customer!');
     }
 }
