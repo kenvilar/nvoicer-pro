@@ -2,7 +2,7 @@
 
 /**
  * Invoicing related routes
- * name: admin.invoicing
+ * name: admin.invoicing.
  * namespace: Admin\Invoicing
  * prefix: admin/invoicing
  */
