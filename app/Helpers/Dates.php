@@ -6,6 +6,6 @@ class Dates
 {
     public static function pretty_dates($date)
     {
-        return date('F Y, d', strtotime($date));
+        return date('F d, Y', strtotime($date));
     }
 }
