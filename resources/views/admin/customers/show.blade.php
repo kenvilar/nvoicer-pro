@@ -24,6 +24,11 @@
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
                                     <a class="dropdown-item" href="{{ route('admin.customers.edit', $customer->id) }}">Edit
                                         Customer</a>
+                                    <a class="dropdown-item" href="" onclick="event.preventDefault();document.getElementById('delete-customer-form').submit()">Delete</a>
+                                    <form action="{{ route('admin.customers.delete', $customer->id) }}" method="post" id="delete-customer-form" style="display: none">
+                                        @csrf
+                                        @method('DELETE')
+                                    </form>
                                     {{-- Add more links here --}}
                                 </div>
                             </li>
