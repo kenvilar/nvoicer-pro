@@ -7,6 +7,9 @@
 
 @section('content')
     <div class="container">
+
+        @include('components.alerts.pack')
+
         <div class="card mt-3">
             <div class="card-body">
                 <div class="row">
