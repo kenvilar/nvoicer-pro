@@ -86,7 +86,7 @@ class CustomersController extends Controller
 
         $customer->update($request->all());
 
-        return redirect()->route('admin.customers.show', $customer->id);
+        return redirect()->route('admin.customers.show', $customer->id)->with('success', 'You have successfully updated the customer!');
     }
 
     /**
