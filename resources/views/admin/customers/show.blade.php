@@ -79,7 +79,11 @@
                     </tr>
                     <tr>
                         <th>Created</th>
-                        <td></td>
+                        <td>{{ Dates::pretty_dates($customer->created_at) }}</td>
+                    </tr>
+                    <tr>
+                        <th>Last Updated</th>
+                        <td>{{ Dates::pretty_dates($customer->updated_at) }}</td>
                     </tr>
                     </tbody>
                 </table>
