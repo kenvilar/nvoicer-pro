@@ -17,7 +17,7 @@ class CustomersController extends Controller
     {
         $customers = Customer::all();
 
-        return view('admin.invoicing.customers.index', compact(['customers']));
+        return view('admin.customers.index', compact(['customers']));
     }
 
     /**
@@ -27,7 +27,7 @@ class CustomersController extends Controller
      */
     public function create()
     {
-        return view('admin.invoicing.customers.create');
+        return view('admin.customers.create');
     }
 
     /**
@@ -51,12 +51,12 @@ class CustomersController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param Customer $customer
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
-    public function show($id)
+    public function show(Customer $customer)
     {
-        //
+        return view('admin.customers.show');
     }
 
     /**
