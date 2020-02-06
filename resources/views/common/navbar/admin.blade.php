@@ -12,8 +12,8 @@
         Invoicing <span class="caret"></span>
     </a>
     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-        <a class="dropdown-item" href="#">Dashboard</a>
-        <a class="dropdown-item" href="#">Create Invoice</a>
+        <a class="dropdown-item" href="{{ route('admin.invoicing.dashboard') }}">Dashboard</a>
+        <a class="dropdown-item" href="{{ route('admin.invoicing.create') }}">Create Invoice</a>
         <div class="dropdown-divider"></div>
         <a class="dropdown-item" href="#">Recent Invoices</a>
         <a class="dropdown-item" href="#">Overdue Invoices</a>
