@@ -22,7 +22,8 @@
                                     Options <span class="caret"></span>
                                 </a>
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('admin.customers.create') }}">Create Customer</a>
+                                    <a class="dropdown-item" href="{{ route('admin.customers.create') }}">Create
+                                        Customer</a>
                                     {{-- Add more links here --}}
                                 </div>
                             </li>
@@ -54,7 +55,44 @@
                             </div>
                         </div>
                         <div class="col-5 offset-2">
+                            <h5>From</h5>
+                            <hr>
 
+                            <div class="form-group">
+                                <label for="">From</label>
+                                <input type="text" class="form-control" name="from"
+                                       value="{{ old('from') ? old('from') : config('company.name') }}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Address</label>
+                                <input type="text" class="form-control" name="address"
+                                       value="{{ old('address') ? old('address') : config('company.address') }}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Postal Code</label>
+                                <input type="text" class="form-control" name="postal_code"
+                                       value="{{ old('postal_code') ? old('postal_code') : config('company.postal_code') }}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">City</label>
+                                <input type="text" class="form-control" name="city"
+                                       value="{{ old('city') ? old('city') : config('company.city') }}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Province</label>
+                                <input type="text" class="form-control" name="province"
+                                       value="{{ old('province') ? old('province') : config('company.province') }}">
+                            </div>
+
+                            <div class="form-group">
+                                <label for="">Country</label>
+                                <input type="text" class="form-control" name="country"
+                                       value="{{ old('country') ? old('country') : config('company.country') }}">
+                            </div>
                         </div>
                     </div>
                 </form>
