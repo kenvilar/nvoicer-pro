@@ -2195,6 +2195,8 @@ __webpack_require__.r(__webpack_exports__);
       var _this2 = this;
 
       axios.get('/admin/customers/data/show/' + id).then(function (response) {
+        $('#customersModal').modal('toggle');
+
         _this2.$emit('customerSelected', response.data.customer);
       });
     }
@@ -2235,15 +2237,52 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {},
   data: function data() {
     return {
       item_count: 1,
       items: [{
+        id: 1,
         description: 'Widget 1',
         cost: 255.00
-      }]
+      }],
+      item_cost: '',
+      item_description: '',
+      sub_total: 0.00
     };
   },
   methods: {
@@ -2252,6 +2291,26 @@ __webpack_require__.r(__webpack_exports__);
     },
     getCost: function getCost(cost) {
       return cost.toFixed(2);
+    },
+    addItem: function addItem() {
+      this.item_count++;
+      this.items.push({
+        id: this.item_count,
+        description: this.item_description,
+        cost: parseFloat(this.item_cost) || 0.00
+      });
+      this.sub_total = this.calculateTotals();
+      console.log('this.calculateTotals()', this.calculateTotals());
+      this.item_description = '';
+      this.item_cost = '';
+      $('#addItemModal').modal('toggle');
+    },
+    calculateTotals: function calculateTotals() {
+      var x = 0.00;
+      this.items.forEach(function (item) {
+        x += item.cost;
+      });
+      return x;
     }
   }
 });
@@ -38357,7 +38416,7 @@ var render = function() {
         "table",
         { staticClass: "table table-sm table-hover" },
         _vm._l(_vm.items, function(item) {
-          return _c("tbody", { key: item.description }, [
+          return _c("tbody", { key: item.id }, [
             _c("tr", [
               _c("th", [_vm._v(_vm._s(item.description))]),
               _vm._v(" "),
@@ -38368,8 +38427,112 @@ var render = function() {
           ])
         }),
         0
-      )
-    ])
+      ),
+      _vm._v(" "),
+      _c("div", { staticClass: "row" }, [
+        _vm._m(2),
+        _vm._v(" "),
+        _c("div", { staticClass: "col-3" }, [
+          _c("h5", { staticClass: "ml-3" }, [
+            _vm._v("$" + _vm._s(_vm.getCost(_vm.sub_total)))
+          ])
+        ])
+      ])
+    ]),
+    _vm._v(" "),
+    _c(
+      "div",
+      {
+        staticClass: "modal fade",
+        attrs: {
+          id: "addItemModal",
+          tabindex: "-1",
+          role: "dialog",
+          "aria-labelledby": "exampleModalLabel",
+          "aria-hidden": "true"
+        }
+      },
+      [
+        _c(
+          "div",
+          { staticClass: "modal-dialog", attrs: { role: "document" } },
+          [
+            _c("div", { staticClass: "modal-content" }, [
+              _vm._m(3),
+              _vm._v(" "),
+              _c("div", { staticClass: "modal-body" }, [
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", { attrs: { for: "" } }, [
+                    _vm._v("Item Description")
+                  ]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.item_description,
+                        expression: "item_description"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "text" },
+                    domProps: { value: _vm.item_description },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.item_description = $event.target.value
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c("div", { staticClass: "form-group" }, [
+                  _c("label", { attrs: { for: "" } }, [_vm._v("Item Cost:")]),
+                  _vm._v(" "),
+                  _c("input", {
+                    directives: [
+                      {
+                        name: "model",
+                        rawName: "v-model",
+                        value: _vm.item_cost,
+                        expression: "item_cost"
+                      }
+                    ],
+                    staticClass: "form-control",
+                    attrs: { type: "number", step: "0.01" },
+                    domProps: { value: _vm.item_cost },
+                    on: {
+                      input: function($event) {
+                        if ($event.target.composing) {
+                          return
+                        }
+                        _vm.item_cost = $event.target.value
+                      }
+                    }
+                  })
+                ]),
+                _vm._v(" "),
+                _c(
+                  "span",
+                  {
+                    staticClass: "btn btn-success",
+                    on: {
+                      click: function($event) {
+                        return _vm.addItem()
+                      }
+                    }
+                  },
+                  [_vm._v("Add Item")]
+                )
+              ])
+            ])
+          ]
+        )
+      ]
+    )
   ])
 }
 var staticRenderFns = [
@@ -38379,9 +38542,14 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("h5", [
       _vm._v("Invoice Items "),
-      _c("button", { staticClass: "btn btn-sm btn-success float-right" }, [
-        _vm._v("Add Item")
-      ])
+      _c(
+        "span",
+        {
+          staticClass: "btn btn-sm btn-success float-right",
+          attrs: { "data-toggle": "modal", "data-target": "#addItemModal" }
+        },
+        [_vm._v("Add Item")]
+      )
     ])
   },
   function() {
@@ -38390,14 +38558,45 @@ var staticRenderFns = [
     var _c = _vm._self._c || _h
     return _c("td", [
       _c("div", { staticClass: "btn-group" }, [
-        _c("button", { staticClass: "btn btn-sm btn-danger" }, [
+        _c("span", { staticClass: "btn btn-sm btn-danger" }, [
           _vm._v("Delete")
         ]),
         _vm._v(" "),
-        _c("button", { staticClass: "btn btn-sm btn-warning" }, [
-          _vm._v("Edit")
-        ])
+        _c("span", { staticClass: "btn btn-sm btn-warning" }, [_vm._v("Edit")])
       ])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "col-9" }, [
+      _c("h5", { staticClass: "text-right" }, [_vm._v("Subtotal:")])
+    ])
+  },
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("div", { staticClass: "modal-header" }, [
+      _c(
+        "h5",
+        { staticClass: "modal-title", attrs: { id: "exampleModalLabel" } },
+        [_vm._v("Add Item")]
+      ),
+      _vm._v(" "),
+      _c(
+        "button",
+        {
+          staticClass: "close",
+          attrs: {
+            type: "button",
+            "data-dismiss": "modal",
+            "aria-label": "Close"
+          }
+        },
+        [_c("span", { attrs: { "aria-hidden": "true" } }, [_vm._v("×")])]
+      )
     ])
   }
 ]
