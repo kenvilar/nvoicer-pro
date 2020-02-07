@@ -40,5 +40,6 @@
             </div>
         </main>
     </div>
+    @stack('footer-scripts')
 </body>
 </html>

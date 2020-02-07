@@ -175,8 +175,8 @@
                 </div>
                 <div class="modal-body">
                     <ul class="list-group">
-                        @foreach(\App\Models\Customer::all() as $customer)
-                            <li class="list-group-item">{{ $customer->name }}</li>
+                        @foreach(Customer::all() as $customer)
+                            <li class="list-group-item" onclick="getCustomerDetails({{ $customer->id }})">{{ $customer->name }}</li>
                         @endforeach
                     </ul>
                 </div>
@@ -188,3 +188,7 @@
         </div>
     </div>
 @endsection
+
+
+@push('footer-scripts')
+@endpush
