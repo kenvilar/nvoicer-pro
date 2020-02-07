@@ -28,6 +28,6 @@ Vue.component('create-invoice', require('./components/invoicing/create/CreateInv
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-const app = new Vue({
-    el: '#app',
-});
+// const app = new Vue({
+//     el: '#app',
+// });
