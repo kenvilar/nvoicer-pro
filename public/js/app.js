@@ -38007,6 +38007,7 @@ var render = function() {
                               "li",
                               {
                                 staticClass: "list-group-item",
+                                attrs: { role: "button" },
                                 on: {
                                   click: function($event) {
                                     return _vm.getCustomer(customer.id)

@@ -14,7 +14,7 @@
                     <div class="modal-body">
                         <div v-if="customers !== null">
                             <ul class="list-group" v-for="customer in customers" :key="customer.id">
-                                <li class="list-group-item" v-on:click="getCustomer(customer.id)">{{ customer.name }}
+                                <li class="list-group-item" role="button" v-on:click="getCustomer(customer.id)">{{ customer.name }}
                                 </li>
                             </ul>
                         </div>
