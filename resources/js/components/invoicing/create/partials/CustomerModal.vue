@@ -37,7 +37,7 @@
         methods: {
             getCustomers() {
                 axios.get('/admin/customers/data/all').then(response => {
-                    this.customers = response.data;
+                    this.customers = response.data.customers;
                     console.log('this.customers', this.customers);
                 });
             }

@@ -10,6 +10,6 @@ class CustomersController extends Controller
 {
     public function all()
     {
-        return Customer::query()->select(['id', 'name',])->get();
+        return response()->json(['customers' => Customer::query()->select(['id', 'name',])->get()]);
     }
 }

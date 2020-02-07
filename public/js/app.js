@@ -2123,7 +2123,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get('/admin/customers/data/all').then(function (response) {
-        _this.customers = response.data;
+        _this.customers = response.data.customers;
         console.log('this.customers', _this.customers);
       });
     }
