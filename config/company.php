@@ -7,4 +7,5 @@ return [
     'province' => 'Zamboanga del Norte',
     'country' => 'Philippines',
     'postal_code' => '7100',
+    'email' => 'email@example.com',
 ];
