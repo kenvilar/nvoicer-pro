@@ -76,7 +76,7 @@
         },
         methods: {
             addInvoiceItem() {
-                console.log('added!');
+                //
             },
             getCost(cost) {
                 return cost.toFixed(2);
@@ -89,7 +89,6 @@
                     cost: parseFloat(this.item_cost) || 0.00,
                 });
                 this.sub_total = this.calculateTotals();
-                console.log('this.calculateTotals()', this.calculateTotals());
                 this.item_description = '';
                 this.item_cost = '';
                 $('#addItemModal').modal('toggle');
