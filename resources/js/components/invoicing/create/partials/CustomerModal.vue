@@ -5,7 +5,7 @@
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Select a C ustomer</h5>
+                        <h5 class="modal-title" id="exampleModalLabel">Select a Customer</h5>
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                             <span aria-hidden="true">&times;</span>
                         </button>
@@ -13,13 +13,9 @@
                     <div class="modal-body">
                         <div v-if="customers !== null">
                             <ul class="list-group" v-for="customer in customers" :key="customer.id">
-                                <li class="list-group-item">{{ customer->name  }}</li>
+                                <li class="list-group-item">{{ customer.name }}</li>
                             </ul>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
                     </div>
                 </div>
             </div>
@@ -31,7 +27,7 @@
 <script>
     export default  {
         mounted() {
-            //
+            this.getCustomers();
         },
         data() {
             return {
@@ -41,8 +37,8 @@
         methods: {
             getCustomers() {
                 axios.get('/admin/customers/data/all').then(response => {
-                    console.log('response.data', response.data);
-                    this.customers = response.data.customers;
+                    this.customers = response.data;
+                    console.log('this.customers', this.customers);
                 });
             }
         },

@@ -111,5 +111,28 @@
                 </div>
             </div>
         </div>
+
+        <CustomerModal></CustomerModal>
     </div>
 </template>
+
+<script>
+    import CustomerModal from './partials/CustomerModal';
+
+    export default {
+        mounted() {
+
+        },
+        components: {
+            CustomerModal: CustomerModal,
+        },
+        data() {
+            return {
+
+            }
+        },
+        methods: {
+
+        }
+    }
+</script>
