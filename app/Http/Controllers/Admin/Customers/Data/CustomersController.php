@@ -15,6 +15,6 @@ class CustomersController extends Controller
 
     public function show(Customer $customer)
     {
-        return response()->json(['customer' => Customer::query()->find($customer)]);
+        return response()->json(['customer' => $customer]);
     }
 }

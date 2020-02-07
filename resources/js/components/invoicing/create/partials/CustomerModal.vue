@@ -38,10 +38,7 @@
         },
         methods: {
             getCustomers() {
-                axios.get('/admin/customers/data/all').then(response => {
-                    this.customers = response.data.customers;
-                    console.log('this.customers', this.customers);
-                });
+                axios.get('/admin/customers/data/all').then(response => this.customers = response.data.customers);
             },
             getCustomer(id) {
                 axios.get('/admin/customers/data/show/' + id).then(response => {

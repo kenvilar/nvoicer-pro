@@ -2125,8 +2125,7 @@ __webpack_require__.r(__webpack_exports__);
       var _this = this;
 
       axios.get('/admin/customers/data/all').then(function (response) {
-        _this.customers = response.data.customers;
-        console.log('this.customers', _this.customers);
+        return _this.customers = response.data.customers;
       });
     },
     getCustomer: function getCustomer(id) {

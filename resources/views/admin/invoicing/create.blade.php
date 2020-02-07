@@ -69,7 +69,6 @@
 
 @push('footer-scripts')
     <script>
-        console.log('hello');
         var createForm = new Vue({
             el: '#create-invoice',
         });
