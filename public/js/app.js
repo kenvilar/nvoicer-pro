@@ -2109,6 +2109,8 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
     this.getCustomers();
@@ -2125,6 +2127,13 @@ __webpack_require__.r(__webpack_exports__);
       axios.get('/admin/customers/data/all').then(function (response) {
         _this.customers = response.data.customers;
         console.log('this.customers', _this.customers);
+      });
+    },
+    getCustomer: function getCustomer(id) {
+      var _this2 = this;
+
+      axios.get('/admin/customers/data/show/' + id).then(function (response) {
+        _this2.$emit('customerSelected', response.data.customer);
       });
     }
   }
@@ -37827,9 +37836,23 @@ var render = function() {
                           "ul",
                           { key: customer.id, staticClass: "list-group" },
                           [
-                            _c("li", { staticClass: "list-group-item" }, [
-                              _vm._v(_vm._s(customer.name))
-                            ])
+                            _c(
+                              "li",
+                              {
+                                staticClass: "list-group-item",
+                                on: {
+                                  click: function($event) {
+                                    return _vm.getCustomer(customer.id)
+                                  }
+                                }
+                              },
+                              [
+                                _vm._v(
+                                  _vm._s(customer.name) +
+                                    "\n                            "
+                                )
+                              ]
+                            )
                           ]
                         )
                       }),

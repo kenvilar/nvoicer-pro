@@ -1,7 +1,8 @@
 <template>
     <div>
         <!-- Modal -->
-        <div class="modal fade" id="customersModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal fade" id="customersModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+             aria-hidden="true">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -13,7 +14,8 @@
                     <div class="modal-body">
                         <div v-if="customers !== null">
                             <ul class="list-group" v-for="customer in customers" :key="customer.id">
-                                <li class="list-group-item">{{ customer.name }}</li>
+                                <li class="list-group-item" v-on:click="getCustomer(customer.id)">{{ customer.name }}
+                                </li>
                             </ul>
                         </div>
                     </div>
@@ -25,7 +27,7 @@
 
 
 <script>
-    export default  {
+    export default {
         mounted() {
             this.getCustomers();
         },
@@ -39,6 +41,11 @@
                 axios.get('/admin/customers/data/all').then(response => {
                     this.customers = response.data.customers;
                     console.log('this.customers', this.customers);
+                });
+            },
+            getCustomer(id) {
+                axios.get('/admin/customers/data/show/' + id).then(response => {
+                    this.$emit('customerSelected', response.data.customer);
                 });
             }
         },
