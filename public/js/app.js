@@ -2063,6 +2063,9 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   mounted: function mounted() {
@@ -2102,6 +2105,9 @@ __webpack_require__.r(__webpack_exports__);
     },
     assignCustomerData: function assignCustomerData(item) {
       this.customer = item;
+    },
+    clearCustomerData: function clearCustomerData() {
+      this.customer = {};
     }
   }
 });
@@ -37782,7 +37788,33 @@ var render = function() {
             ])
           ]),
           _vm._v(" "),
-          _vm._m(1),
+          _c("h5", [
+            _vm._v("\n                For\n                "),
+            _c(
+              "span",
+              {
+                staticClass: "btn btn-sm btn-primary float-right",
+                attrs: {
+                  "data-toggle": "modal",
+                  "data-target": "#customersModal"
+                }
+              },
+              [_vm._v("Customer")]
+            ),
+            _vm._v(" "),
+            _c(
+              "span",
+              {
+                staticClass: "btn btn-sm btn-warning float-right mr-2",
+                on: {
+                  click: function($event) {
+                    return _vm.clearCustomerData()
+                  }
+                }
+              },
+              [_vm._v("Clear Data")]
+            )
+          ]),
           _vm._v(" "),
           _c("hr"),
           _vm._v(" "),
@@ -38041,22 +38073,6 @@ var staticRenderFns = [
           attrs: { type: "text", name: "subject" }
         })
       ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("h5", [
-      _vm._v("For "),
-      _c(
-        "span",
-        {
-          staticClass: "btn btn-sm btn-primary float-right",
-          attrs: { "data-toggle": "modal", "data-target": "#customersModal" }
-        },
-        [_vm._v("Customer")]
-      )
     ])
   }
 ]

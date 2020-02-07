@@ -65,8 +65,11 @@
                     </div>
                 </div>
 
-                <h5>For <span class="btn btn-sm btn-primary float-right" data-toggle="modal"
-                              data-target="#customersModal">Customer</span></h5>
+                <h5>
+                    For
+                    <span class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#customersModal">Customer</span>
+                    <span class="btn btn-sm btn-warning float-right mr-2" v-on:click="clearCustomerData()">Clear Data</span>
+                </h5>
                 <hr>
 
                 <input type="hidden" name="id" v-model="customer.id">
@@ -158,6 +161,9 @@
             },
             assignCustomerData(item) {
                 this.customer = item;
+            },
+            clearCustomerData() {
+                this.customer = {};
             },
         }
     }
