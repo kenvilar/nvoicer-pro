@@ -26,47 +26,50 @@
                 <div class="form-group row">
                     <label for="" class="col-3">From</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="from">
+                        <input type="text" class="form-control" name="from" v-model="company.name">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="" class="col-3">Address</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="address">
+                        <input type="text" class="form-control" name="address" v-model="company.address">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="" class="col-3">Postal Code</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="postal_code">
+                        <input type="text" class="form-control" name="postal_code" v-model="company.postal_code">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="" class="col-3">City</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="city">
+                        <input type="text" class="form-control" name="city" v-model="company.city">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="" class="col-3">Province</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="province">
+                        <input type="text" class="form-control" name="province" v-model="company.province">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="" class="col-3">Country</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="country">
+                        <input type="text" class="form-control" name="country" v-model="company.country">
                     </div>
                 </div>
 
-                <h5>For <span class="btn btn-sm btn-primary float-right" data-toggle="modal" data-target="#customersModal">Customer</span></h5>
+                <h5>For <span class="btn btn-sm btn-primary float-right" data-toggle="modal"
+                              data-target="#customersModal">Customer</span></h5>
                 <hr>
+
+                <input type="hidden" name="id" v-model="customer.id">
 
                 <div class="form-group row">
                     <label for="" class="col-3">For</label>
@@ -121,14 +124,23 @@
 
     export default {
         mounted() {
-
+            this.getCompany();
         },
         components: {
             CustomerModal: CustomerModal,
         },
         data() {
             return {
+                company: {
+                    name: '',
+                    address: '',
+                    city: '',
+                    province: '',
+                    postal_code: '',
+                    country: '',
+                },
                 customer: {
+                    id: '',
                     name: '',
                     address_1: '',
                     postal_code: '',
@@ -139,6 +151,11 @@
             }
         },
         methods: {
+            getCompany() {
+                axios.get('/admin/company/data/details').then(response => {
+                    this.company = response.data.company;
+                });
+            },
             assignCustomerData(item) {
                 this.customer = item;
             },
