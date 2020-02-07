@@ -42,6 +42,13 @@
                     </div>
 
                     <div class="form-group row">
+                        <label for="" class="col-md-3">Postal Code</label>
+                        <div class="col-md-9">
+                            <input type="text" class="form-control" name="postal_code" value="{{ old('postal_code') }}">
+                        </div>
+                    </div>
+
+                    <div class="form-group row">
                         <label for="" class="col-md-3">City</label>
                         <div class="col-md-9">
                             <input type="text" class="form-control" name="city" value="{{ old('city') }}">

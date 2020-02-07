@@ -71,48 +71,48 @@
                 <div class="form-group row">
                     <label for="" class="col-3">For</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="for">
+                        <input type="text" class="form-control" name="for" v-model="customer.name">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="" class="col-3">Address</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="for_address">
+                        <input type="text" class="form-control" name="for_address" v-model="customer.address_1">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="" class="col-3">Postal Code</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="for_postal_code">
+                        <input type="text" class="form-control" name="for_postal_code" v-model="customer.postal_code">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="" class="col-3">City</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="for_city">
+                        <input type="text" class="form-control" name="for_city" v-model="customer.city">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="" class="col-3">Province</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="for_province">
+                        <input type="text" class="form-control" name="for_province" v-model="customer.province">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="" class="col-3">Country</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="for_country">
+                        <input type="text" class="form-control" name="for_country" v-model="customer.country">
                     </div>
                 </div>
             </div>
         </div>
 
-        <CustomerModal></CustomerModal>
+        <CustomerModal v-on:customerSelected="assignCustomerData($event)"></CustomerModal>
     </div>
 </template>
 
@@ -128,11 +128,20 @@
         },
         data() {
             return {
-
+                customer: {
+                    name: '',
+                    address_1: '',
+                    postal_code: '',
+                    city: '',
+                    province: '',
+                    country: '',
+                }
             }
         },
         methods: {
-
+            assignCustomerData(item) {
+                this.customer = item;
+            },
         }
     }
 </script>
