@@ -33,35 +33,42 @@
                 <div class="form-group row">
                     <label for="" class="col-3">Address</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="address" v-model="company.address">
+                        <input type="text" class="form-control" name="from_address" v-model="company.address">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="" class="col-3">Postal Code</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="postal_code" v-model="company.postal_code">
+                        <input type="text" class="form-control" name="from_postal_code" v-model="company.postal_code">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="" class="col-3">City</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="city" v-model="company.city">
+                        <input type="text" class="form-control" name="from_city" v-model="company.city">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="" class="col-3">Province</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="province" v-model="company.province">
+                        <input type="text" class="form-control" name="from_province" v-model="company.province">
                     </div>
                 </div>
 
                 <div class="form-group row">
                     <label for="" class="col-3">Country</label>
                     <div class="col-9">
-                        <input type="text" class="form-control" name="country" v-model="company.country">
+                        <input type="text" class="form-control" name="from_country" v-model="company.country">
+                    </div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="" class="col-3">Email</label>
+                    <div class="col-9">
+                        <input type="text" class="form-control" name="from_country" v-model="company.email">
                     </div>
                 </div>
 
@@ -115,8 +122,19 @@
                         <input type="text" class="form-control" name="for_country" v-model="customer.country">
                     </div>
                 </div>
+
+                <div class="form-group row">
+                    <label for="" class="col-3">Email</label>
+                    <div class="col-9">
+                        <input type="text" class="form-control" name="for_email" v-model="customer.email">
+                    </div>
+                </div>
             </div>
         </div>
+
+        <hr>
+
+        <InvoiceItems></InvoiceItems>
 
         <CustomerModal v-on:customerSelected="assignCustomerData($event)"></CustomerModal>
     </div>
@@ -124,6 +142,7 @@
 
 <script>
     import CustomerModal from './partials/CustomerModal';
+    import InvoiceItems from './partials/InvoiceItems';
 
     export default {
         mounted() {
@@ -131,6 +150,7 @@
         },
         components: {
             CustomerModal: CustomerModal,
+            InvoiceItems: InvoiceItems,
         },
         data() {
             return {
@@ -141,6 +161,7 @@
                     province: '',
                     postal_code: '',
                     country: '',
+                    email: '',
                 },
                 customer: {
                     id: '',
@@ -150,6 +171,7 @@
                     city: '',
                     province: '',
                     country: '',
+                    email: '',
                 }
             }
         },
